@@ -11,7 +11,7 @@
             body {
                 padding: 0;
                 margin: 0;
-                background-color: #000000;
+                background-color: #020202;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -22,8 +22,9 @@
             }
 
             .logo {
-                max-width: 1150px;
+                max-width: 1000px;
                 padding-top: 5%;
+                padding-bottom: 100px;
             }
 
             .description, .staytuned, .email {
@@ -42,29 +43,74 @@
             .email {
                 font-size: 1.1em;
                 margin: 0;
-                
+                display: inline-block;
             }
 
             .directly_email {
                 border-bottom: 1px solid transparent;
                 transition: border 0.4s ease-out;
+                margin: 0;
             }
 
             .directly_email:hover {
                 border-bottom: 1px solid #fff;
             }
+
+            .primary {
+                position: relative;
+                opacity: 0;
+                top: -150px;
+                animation-duration: 0.4s;
+                animation-name: move-from-top;
+                animation-fill-mode: forwards;
+            }
+
+            @keyframes move-from-top {
+                0% {
+                    top: -150px;
+                    opacity: 0;
+                }
+
+                100% {
+                    top: 0;
+                    opacity: 1;
+                }
+            }
+
+            .secondary {
+                width: 100%;
+                text-align: center;
+                opacity: 0%;
+                animation-delay: 0.5s;
+                animation-duration: 2s;
+                animation-name: appear;
+                animation-fill-mode: forwards;
+            }
+
+            @keyframes appear {
+                from {
+                    opacity: 0%;
+                }
+
+                to {
+                    opacity: 100%;
+                }
+            }
         </style>
-        <img class="logo" src="logo.svg">
-        <p class="description">
-            A vendor of game development software
-        </p>
-        <p class="staytuned">
-           
-        </p>
-        <a class="email" href="mailto:sales@avtomatikka.com" style="text-decoration: none;">
-            <p class="directly_email">
-                sales@avtomatikka.com
+        <img class="logo primary" src="logo.svg">
+
+        <div class="secondary">
+            <p class="description">
+                A vendor of game development software
             </p>
-        </a>
+            <p class="staytuned">
+            
+            </p>
+            <a class="email" href="mailto:sales@avtomatikka.com" style="text-decoration: none;">
+                <p class="directly_email">
+                    sales@avtomatikka.com
+                </p>
+            </a>
+        </div>
     </body>
 </html>
